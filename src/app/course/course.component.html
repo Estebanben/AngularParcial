@@ -1,0 +1,30 @@
+<div *ngIf="selected">
+  <app-course-detail [courseDetail]="selectedCourse"></app-course-detail>
+ </div>
+
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">Nombre</th>
+          <th class="h4">Edad</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of pacientes">
+          <td>
+            <dd (click)="onSelected(c)">{{ c.nombre }}</dd>
+          </td>
+          <td>
+            <dd>{{ c.edad }}</dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container-fluid">
+      <p>Numero de menores: {{ menores }}</p>
+    </div>
+  </div>
+</div>
